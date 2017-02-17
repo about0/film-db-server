@@ -7,7 +7,7 @@ const https = require('https');
 const fs = require('fs');
 
 // MongoDB
-mongoose.connect('mongodb://localhost/rest_test');
+mongoose.connect('mongodb://about0:08201455@ds153669.mlab.com:53669/heroku_36b7f8r8');
 
 // Options
 var allowCrossDomain = function (req, res, next) {
