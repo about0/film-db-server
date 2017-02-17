@@ -1,0 +1,21 @@
+{
+  "name": "film-db-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mongoose": "4.8.3",
+    "restify": "4.3.0"
+  },
+  "dependencies": {
+    "express": "4.14.1",
+    "node-restful": "0.2.6",
+    "body-parser": "1.16.1"
+  }
+}
