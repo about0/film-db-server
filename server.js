@@ -10,11 +10,16 @@ const fs = require('fs');
 mongoose.connect('mongodb://95.158.2.12/rest_test');
 
 // Options
-var allowCrossDomain = function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', "http://localhost");
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-};
+// var allowCrossDomain = function (req, res, next) {
+//   res.header('Access-Control-Allow-Origin', "http://localhost");
+//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type');
+// };
+
+var options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('server.crt')
+}
 
 
 // Express
@@ -34,6 +39,7 @@ const app = express();
   app.use('/api', require('./routes/api'))
 
 // Starting Server
-app.listen(3333);
+// app.listen(3333);
+https.createServer(options, app).listen(3333);
 
 console.log('API is running on 3333 port');
