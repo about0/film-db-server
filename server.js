@@ -42,6 +42,6 @@ const app = express();
 
 // Starting Server
 // app.listen(3333);
-http.createServer(app).listen($PORT);
+http.createServer(app).listen(process.env.PORT || 3333);
 
 console.log('API is running on 3333 port');
