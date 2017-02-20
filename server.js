@@ -17,7 +17,8 @@ mongoose.connect('mongodb://95.158.2.12/rest_test');
 // };
 
 var options = {
-  key: fs.readFileSync('key.pem'),
+  ca: "ca",
+  key: fs.readFileSync('server.key'),
   cert: fs.readFileSync('server.crt')
 }
 
@@ -32,6 +33,7 @@ const app = express();
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Content-Type");
     res.header("Access-Control-Allow-Methods", ['GET', 'DELETE', 'PUT', 'POST']);
+    res.header("Access-Control-Allow-Credentials", true)
     next();
   });
 
@@ -40,6 +42,6 @@ const app = express();
 
 // Starting Server
 // app.listen(3333);
-https.createServer(options, app).listen(3333);
+http.createServer(app).listen(3333);
 
 console.log('API is running on 3333 port');

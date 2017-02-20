@@ -14,8 +14,10 @@
     "restify": "4.3.0"
   },
   "dependencies": {
+    "body-parser": "1.16.1",
     "express": "4.14.1",
-    "node-restful": "0.2.6",
-    "body-parser": "1.16.1"
+    "greenlock": "^2.1.12",
+    "greenlock-express": "^2.0.9",
+    "node-restful": "0.2.6"
   }
 }
