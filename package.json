@@ -19,5 +19,8 @@
     "greenlock": "^2.1.12",
     "greenlock-express": "^2.0.9",
     "node-restful": "0.2.6"
+  },
+  "engines": {
+    "node": "7.4.0"
   }
 }
